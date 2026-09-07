@@ -1,0 +1,4 @@
+project_id = "wedding-ecard"
+
+[functions.public-rsvp]
+verify_jwt = false
