@@ -1,0 +1,22 @@
+.prewedding-section{max-width:1160px;padding-top:85px;padding-bottom:85px}
+.prewedding-section .gallery-heading h2{font-size:32px}
+.prewedding-coming-soon{position:relative;text-align:center;padding:58px 25px;background:radial-gradient(ellipse at center,#fffdfa,#f8f1e4);border:1px solid #e7d8bb;border-radius:180px 180px 7px 7px;max-width:760px;margin:auto;color:#937749}
+.prewedding-coming-soon:before{content:'';position:absolute;inset:12px;border:1px solid #eadfc9;border-radius:170px 170px 3px 3px;pointer-events:none}
+.photo-frame-decoration{position:relative;display:grid;place-items:center;margin:0 auto 30px;width:74px;height:86px;border:1px solid #d2b982;background:#fffdf6;transform:rotate(-7deg);box-shadow:7px 7px 0 #f3e7cf;color:#b49a65}
+.photo-frame-decoration>svg:last-child{position:absolute;right:-10px;bottom:5px;background:#faf4e8;padding:2px;box-sizing:content-box}
+.prewedding-coming-soon .eyebrow{font-size:8px;letter-spacing:3px}
+.prewedding-coming-soon h3{font:24px/1.8 'Noto Serif Thai',serif;color:#897045;margin:18px 0 13px}
+.prewedding-coming-soon p{font-size:12px;color:#9b8664;line-height:2}
+.coming-soon-seal{display:block;font-size:7px;letter-spacing:2.5px;color:#ae9365;margin-top:27px}
+.prewedding-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.prewedding-photo{position:relative;display:block;padding:0;border:1px solid #e8d8b8;background:#f8f0e1;aspect-ratio:4/5;overflow:hidden;border-radius:5px;cursor:zoom-in}
+.prewedding-photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.prewedding-photo:hover img{transform:scale(1.04)}
+.prewedding-photo-overlay{position:absolute;inset:auto 0 0;padding:24px 18px 16px;background:linear-gradient(transparent,#49361d66);display:flex;align-items:center;justify-content:space-between;color:#fffdf8;font-size:11px;letter-spacing:2px}
+.prewedding-actions{display:flex;justify-content:center;align-items:center;gap:24px;margin-top:28px}
+.prewedding-full-image{flex:1;min-height:0;overflow:hidden;padding:20px;background:#f5edde;display:grid;place-items:center;touch-action:pan-y pinch-zoom}
+.prewedding-full-image img{width:100%;height:100%;min-height:0;object-fit:contain;display:block}
+.photo-unavailable{display:flex;flex-direction:column;gap:15px;align-items:center;justify-content:center;width:100%;height:100%;min-height:100px;color:#947b55;font-size:12px}
+.prewedding-lightbox .prewedding-counter{display:block;font-size:12px;letter-spacing:2px}
+@media(max-width:950px) and (min-width:601px){.site-header{padding-left:20px;padding-right:20px}.site-header nav{gap:12px}.site-header .brand{font-size:17px}.site-header .nav-rsvp{padding:10px}}
+@media(max-width:600px){.prewedding-section{padding:60px 24px}.prewedding-section .gallery-heading h2{font-size:25px}.prewedding-coming-soon{padding:45px 18px;border-radius:120px 120px 6px 6px}.prewedding-coming-soon:before{border-radius:110px 110px 3px 3px}.prewedding-coming-soon h3{font-size:19px}.prewedding-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.prewedding-photo-overlay{padding:22px 10px 10px;font-size:9px}.prewedding-photo-overlay svg{width:14px}.prewedding-full-image{padding:10px}.prewedding-actions{gap:15px}.prewedding-actions .button{font-size:11px;padding:12px 17px}}
