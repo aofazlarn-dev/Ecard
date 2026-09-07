@@ -1,0 +1,40 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { PGlite } from '@electric-sql/pglite';
+test('database policies, guest privacy, idempotency and server validation',async()=>{
+  const db=new PGlite();
+  try{
+    await db.exec(`create role anon; create role authenticated; create role service_role; create schema auth; create table auth.users(id uuid primary key); create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$; grant usage on schema auth to authenticated; grant execute on function auth.uid() to authenticated;`);
+    await db.exec(await readFile(new URL('../supabase/migrations/202609070001_initial.sql',import.meta.url),'utf8'));
+    const payload={full_name:'Test Guest',attendance_status:'attending',host_side:'bride',guest_group:'ญาติ',guest_count:2};
+    const token='a'.repeat(64);
+    await db.exec('set role service_role');
+    const first=await db.query('select public.submit_rsvp($1::jsonb,$2) as id',[JSON.stringify(payload),token]);
+    const second=await db.query('select public.submit_rsvp($1::jsonb,$2) as id',[JSON.stringify({...payload,guest_count:4}),token]);
+    assert.equal(first.rows[0].id,second.rows[0].id);
+    await assert.rejects(db.query('select public.submit_rsvp($1::jsonb,$2)',[JSON.stringify({...payload,guest_count:0}),'b'.repeat(64)]));
+    await db.query('select public.submit_rsvp($1::jsonb,$2)',[JSON.stringify({...payload,attendance_status:'declined',guest_count:9}),token]);
+    await db.exec('reset role');
+    const data=await db.query('select * from public.rsvps');assert.equal(data.rows.length,1);assert.equal(data.rows[0].guest_count,0);
+    await db.exec('set role anon');
+    await assert.rejects(db.query('select * from public.rsvps'));
+    await assert.rejects(db.query('select * from private.rsvp_receipts'));
+    await assert.rejects(db.query('select public.submit_rsvp($1::jsonb,$2)',[JSON.stringify(payload),token]));
+    await db.exec('reset role');
+    const admin='11111111-1111-4111-8111-111111111111',stranger='22222222-2222-4222-8222-222222222222';
+    await db.query('insert into auth.users(id) values($1),($2)',[admin,stranger]);
+    await db.query('insert into public.admin_users values($1)',[admin]);
+    await db.exec('set role authenticated');
+    await db.query("select set_config('request.jwt.claim.sub',$1,false)",[stranger]);
+    assert.equal((await db.query('select * from public.rsvps')).rows.length,0);
+    assert.equal((await db.query('select * from public.admin_users')).rows.length,0);
+    await assert.rejects(db.query('insert into public.admin_users values($1)',[stranger]));
+    await assert.rejects(db.query('select public.submit_rsvp($1::jsonb,$2)',[JSON.stringify(payload),token]));
+    await db.query("select set_config('request.jwt.claim.sub',$1,false)",[admin]);
+    assert.equal((await db.query('select * from public.rsvps')).rows.length,1);
+    await db.query("update public.rsvps set remark='admin edit'");
+    assert.equal((await db.query('select remark from public.rsvps')).rows[0].remark,'admin edit');
+    await db.query('delete from public.rsvps');assert.equal((await db.query('select * from public.rsvps')).rows.length,0);
+  } finally {await db.close();}
+});
