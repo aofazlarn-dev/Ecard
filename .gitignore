@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.env
+.env.local
+.env.*.local
+work/
+.DS_Store
+# Original print artwork/download archive stays local; web assets are in public/images.
+Card/
+*.zip
+.env.*
+!.env.example
+supabase/.temp/
+supabase/.branches/
