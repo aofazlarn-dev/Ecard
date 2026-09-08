@@ -20,6 +20,7 @@ export function WeddingHero() {
     <div className="hero-art" aria-label="ภาพคู่บ่าวสาว">
       <div className="arch-outline" aria-hidden="true"/>
       <div className="portrait-arch"><img src={asset('couple-ivory.webp')} width="1068" height="1473" alt="ภาพการ์ตูนคู่บ่าวสาวจากแบบการ์ดเชิญ" fetchPriority="high"/></div>
+      <div className="hero-card" aria-hidden="true"><img src={asset('card-front.webp')} width="1571" height="2171" alt=""/></div>
       <span className="art-sparkle sparkle-one" aria-hidden="true">✧</span><span className="art-sparkle sparkle-two" aria-hidden="true">✦</span>
       <div className="wedding-seal" aria-hidden="true"><span>WITH LOVE</span><Heart size={23} strokeWidth={1}/><small>28 · 11 · 2026</small></div>
       <div className="art-caption"><span>YOU & ME</span><i>and a lifetime of love.</i></div>
