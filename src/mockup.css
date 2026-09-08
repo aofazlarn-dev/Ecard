@@ -1,9 +1,8 @@
 /* Layout matched to the approved stationery mockup. */
 .wedding-wordmark{display:inline-flex;align-items:center;gap:15px;flex-shrink:0;color:#352b26;padding:3px 0}
-.wedding-monogram{width:52px;height:58px;border:1px solid #b49a68;border-radius:50%;position:relative;display:flex;align-items:center;justify-content:center;gap:1px;transform:rotate(-8deg)}
-.wedding-monogram:after{content:'';position:absolute;inset:4px;border:1px solid #b49a6845;border-radius:50%}.wedding-monogram i{font:400 26px/1 'Noto Serif Thai',serif;font-style:normal}.wedding-monogram em{font:italic 19px/1 'Playfair Display',serif;color:#a6884e;margin-top:13px}.wedding-monogram i:last-child{margin-top:12px}
-.wedding-wordmark-copy{display:flex;flex-direction:column;gap:5px}.wedding-wordmark-copy strong{font:400 23px/1.4 'Noto Serif Thai',serif;letter-spacing:.3px}.wedding-wordmark-copy small{font:9px/1.4 Georgia,serif;letter-spacing:2px;color:#826b43}.wedding-wordmark:hover .wedding-monogram{background:#eee3d0}
-@media(max-width:700px){.wedding-wordmark{gap:11px}.wedding-monogram{width:40px;height:46px}.wedding-monogram i{font-size:21px}.wedding-monogram em{font-size:15px}.wedding-wordmark-copy strong{font-size:19px}.wedding-wordmark-copy small{font-size:8px;letter-spacing:1.6px}}
+.wedding-logo{display:block;width:64px;height:64px;object-fit:contain;flex-shrink:0}
+.wedding-wordmark-copy{display:flex;flex-direction:column;gap:5px}.wedding-wordmark-copy strong{font:400 23px/1.4 'Noto Serif Thai',serif;letter-spacing:.3px}.wedding-wordmark-copy small{font:9px/1.4 Georgia,serif;letter-spacing:2px;color:#826b43}
+@media(max-width:700px){.wedding-wordmark{gap:11px}.wedding-logo{width:52px;height:52px}.wedding-wordmark-copy strong{font-size:19px}.wedding-wordmark-copy small{font-size:8px;letter-spacing:1.6px}}
 #details .mockup-day strong{font-variant-numeric:lining-nums; font-feature-settings:'lnum' 1}
 #details .detail-card:first-child .text-link,#details .detail-card:nth-child(2) .text-link{display:inline-flex;gap:9px;min-height:42px;margin-top:8px;padding:8px 16px;border:1px solid #a28754;background:#fdf9f1;color:#65502d;font-size:13px;font-weight:500}
 #details .detail-card:first-child .text-link svg,#details .detail-card:nth-child(2) .text-link svg{width:20px;height:20px;stroke-width:1.8}

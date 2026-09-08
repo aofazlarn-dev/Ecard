@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import weddingLogo from '../Logo.png';
 import { ArrowDown, ArrowUpRight, CalendarDays, Check, Heart, MapPin, Menu, X, Copy, QrCode } from 'lucide-react';
 import { QRCodeSVG } from 'qrcode.react';
 import { wedding as w } from './config';
@@ -32,7 +33,7 @@ export default function App() {
     <div className="reading-progress" style={{ transform: `scaleX(${progress})` }} aria-hidden="true"/>
     {demo && <div className="demo-banner">โหมดทดลอง · ข้อมูลบันทึกเฉพาะเบราว์เซอร์นี้ ยังไม่ส่งถึงผู้จัดงาน</div>}
     {w.isSample && <div className="sample-note">ตัวอย่างการ์ด · ชื่อ วัน และสถานที่ยังเป็นข้อมูลสาธิต</div>}
-    <header className="site-header"><a className="wedding-wordmark" href="#home" aria-label={`${w.brideDisplay} และ ${w.groomDisplay} — กลับหน้าแรก`}><span className="wedding-monogram" aria-hidden="true"><i>ม</i><em>&</em><i>ย</i></span><span className="wedding-wordmark-copy"><strong>หนึ่งคำว่าเรา</strong><small>{w.dateEnglish}</small></span></a><button className="mobile-toggle" aria-label="เปิดเมนู" aria-expanded={menu} onClick={() => setMenu(!menu)}>{menu ? <X/> : <Menu/>}</button><nav className={menu ? 'open' : ''} onClick={e=>{if(e.target.closest('a'))setMenu(false);}}><a href="#story">คำเชิญจากเรา</a><a href="#invitation">การ์ดเชิญ</a><a href="#prewedding">Pre-wedding</a><a href="#details">รายละเอียดงาน</a><a href="#rsvp" className="nav-rsvp">ตอบรับคำเชิญ <ArrowUpRight size={14}/></a></nav></header>
+    <header className="site-header"><a className="wedding-wordmark" href="#home" aria-label={`${w.brideDisplay} และ ${w.groomDisplay} — กลับหน้าแรก`}><img className="wedding-logo" src={weddingLogo} width="64" height="64" alt=""/><span className="wedding-wordmark-copy"><strong>หนึ่งคำว่าเรา</strong><small>{w.dateEnglish}</small></span></a><button className="mobile-toggle" aria-label="เปิดเมนู" aria-expanded={menu} onClick={() => setMenu(!menu)}>{menu ? <X/> : <Menu/>}</button><nav className={menu ? 'open' : ''} onClick={e=>{if(e.target.closest('a'))setMenu(false);}}><a href="#story">คำเชิญจากเรา</a><a href="#invitation">การ์ดเชิญ</a><a href="#prewedding">Pre-wedding</a><a href="#details">รายละเอียดงาน</a><a href="#rsvp" className="nav-rsvp">ตอบรับคำเชิญ <ArrowUpRight size={14}/></a></nav></header>
     <main>
       <WeddingHero/>
       <Countdown/>
