@@ -1,4 +1,7 @@
 /* Layout matched to the approved stationery mockup. */
+main #story .family-invitation{margin:20px auto 24px;padding:18px 12px;background:#fffaf070;border-top:1px solid #b49a6880;border-bottom:1px solid #b49a6880}
+main #story .family-invitation .hosts{margin:0 auto 20px;padding:0;background:transparent;border:0}
+main #story .family-invitation .couple-full-names{margin-bottom:0;padding:0;background:transparent;border:0}
 /* Inset stationery panels keep the page background visible around each section. */
 main #story{width:calc(100% - 64px);max-width:940px;margin:54px auto;padding:42px 62px 60px;background:#f3e8d5;border:1px solid #cbb58f;box-shadow:0 16px 36px #57432912;isolation:isolate}
 main #story:before{inset:10px;border-color:#b49a6855;background:linear-gradient(32deg,transparent 49.7%,#cbb58f70 50%,transparent 50.3%) left bottom/50% 120px no-repeat,linear-gradient(-32deg,transparent 49.7%,#cbb58f70 50%,transparent 50.3%) right bottom/50% 120px no-repeat;z-index:-1}
