@@ -26,4 +26,10 @@ Initial extraction prompt:
 
 ## Interaction and theme
 
+### Stationery hero, September 2026
+
+`public/images/stationery-couple.png` was generated with the built-in image tool from `couple-ivory.webp` as a character reference. The original two invitation cards are unchanged. Prompt: Photorealistic ivory handmade deckle-edged invitation on flowing ivory silk, raw silk bow on the left, white phalaenopsis orchids on the right, soft warm window light. Preserve the supplied bride and groom illustration as a small print on the lower half of the paper; upper half has an abstract blind-embossed flourish and champagne-gold star. No text or interface. Palette: ivory #F7F3EC, silk #EAE1D4, gold #B49A68. Landscape 3:2.
+
+This additional hero image is approximately 2.8 MB. Names, dates, controls and the schedule are live HTML, not embedded in the image.
+
 White, cream and antique gold across guest pages and admin. The live countdown uses the configured event start time. Two-page native-dialog viewer supports zoom, keyboard arrows, Escape, focus restoration and PDF download. Decorative animation and scroll reveals respect `prefers-reduced-motion`. The three web images total approximately 645 KB; the 4 MB PDF loads only when requested.

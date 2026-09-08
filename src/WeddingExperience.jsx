@@ -5,29 +5,19 @@ import { wedding as w } from './config';
 export const asset = name => `${import.meta.env.BASE_URL}images/${name}`;
 
 export function WeddingHero() {
-  return <section className="hero editorial-hero" id="home">
-    <div className="gold-orbit orbit-one" aria-hidden="true"/><div className="gold-orbit orbit-two" aria-hidden="true"/>
-    <div className="hero-inner">
-      <div className="eyebrow"><span className="tiny-star">✦</span> THE BEGINNING OF FOREVER</div>
-      <p className="hero-prelude">คำเชิญสู่วันสำคัญของเราสองคน</p>
+  return <section className="mockup-hero" id="home">
+    <div className="mockup-hero-copy">
+      <p className="mockup-eyebrow">TOGETHER WITH OUR FAMILIES</p>
       <h1>{w.brideDisplay}<span>&</span>{w.groomDisplay}</h1>
-      <p className="hero-poem">หนึ่งคำว่าเรา…กับเรื่องราวอีกตลอดไป</p>
-      <div className="hero-rule"/>
-      <p className="hero-date">{w.dateEnglish}</p>
-      <p className="hero-location">{w.venue}<br/>{w.city}</p>
-      <div className="hero-actions"><a href="#rsvp" className="button">ตอบรับคำเชิญ <ArrowUpRight size={17}/></a><a className="text-link" href="#invitation">ชมการ์ดของเรา <ArrowDown size={15}/></a></div>
+      <p className="mockup-poem">หนึ่งคำว่าเรา…กับเรื่องราวอีกตลอดไป</p>
+      <div className="mockup-rule"/>
+      <p className="mockup-date">{w.dateEnglish}</p>
+      <div className="mockup-actions"><a href="#rsvp" className="button">ตอบรับคำเชิญ</a><a href="#details" className="text-link">รายละเอียดงาน</a></div>
     </div>
-    <div className="hero-art" aria-label="ภาพคู่บ่าวสาว">
-      <div className="arch-outline" aria-hidden="true"/>
-      <div className="portrait-arch"><img src={asset('couple-ivory.webp')} width="1068" height="1473" alt="ภาพการ์ตูนคู่บ่าวสาวจากแบบการ์ดเชิญ" fetchPriority="high"/></div>
-      <div className="hero-card" aria-hidden="true"><img src={asset('card-front.webp')} width="1571" height="2171" alt=""/></div>
-      <span className="art-sparkle sparkle-one" aria-hidden="true">✧</span><span className="art-sparkle sparkle-two" aria-hidden="true">✦</span>
-      <div className="wedding-seal" aria-hidden="true"><span>WITH LOVE</span><Heart size={23} strokeWidth={1}/><small>28 · 11 · 2026</small></div>
-      <div className="art-caption"><span>YOU & ME</span><i>and a lifetime of love.</i></div>
-    </div>
-    <div className="hero-bottom"><span>A BEAUTIFUL DAY. OUR FOREVER STORY.</span><a href="#story">เลื่อนเพื่ออ่านคำเชิญ <ArrowDown size={13}/></a></div>
+    <div className="mockup-hero-photo"><img src={asset('stationery-couple.png')} alt="การ์ดกระดาษงาช้างประดับกล้วยไม้และผ้าไหม พร้อมภาพตัวละครบ่าวสาว" width="1536" height="1024" fetchPriority="high"/></div>
   </section>;
 }
+
 
 export function Countdown() {
   const [now,setNow] = useState(Date.now());
