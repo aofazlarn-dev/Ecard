@@ -1,0 +1,46 @@
+/* Approved ivory stationery theme; original invitation and couple artwork retained. */
+:root{--accent:#826b43;--gold:#B49A68;--ivory:#F7F3EC;--ink:#352B26;--muted:#75685D;--line:#dcccaf;background:var(--ivory);color:var(--ink)}
+.site-header{background:#f7f3ecf5;padding:20px max(32px,calc((100vw - 1240px)/2));border-bottom:1px solid var(--line)}
+.site-header .brand,.editorial-hero h1,.story h2,.couple-full-names,.gallery-heading h2,.details h2,.detail-card h3,.rsvp-intro h2,.form-heading,.closing h2{color:var(--ink)}
+.site-header nav{color:var(--ink)}
+.button,.nav-rsvp{background:#352B26;color:#fffdf8;border:1px solid #352B26;border-radius:0;box-shadow:none}
+.button:hover,.nav-rsvp:hover{background:#514137;box-shadow:none}
+.button.secondary{background:transparent;color:#352B26;border-color:#B49A68}
+.eyebrow,.site-header .brand small{color:#826b43}
+.text-link{color:#826b43;text-underline-offset:5px}
+.editorial-hero{grid-template-columns:1fr 1fr;gap:50px;padding:48px max(55px,calc((100vw - 1180px)/2)) 65px;min-height:660px;background:linear-gradient(115deg,#F7F3EC 35%,#EAE1D4);border-bottom:1px solid var(--line)}
+.editorial-hero:after{display:none}
+.editorial-hero .hero-inner{text-align:center;max-width:none}
+.editorial-hero h1{align-items:center;font-size:clamp(58px,6.3vw,88px);line-height:1.3;font-weight:400;letter-spacing:0}
+.editorial-hero h1 span{margin:4px 0;font-size:46px;color:#B49A68}
+.editorial-hero .hero-prelude{margin:18px 0 12px;color:#75685D}
+.hero-poem{color:#352B26;font-size:16px;line-height:1.8}
+.editorial-hero .hero-rule{width:65%;margin:22px auto;background:#B49A68;position:relative}
+.hero-rule:after{content:'';position:absolute;width:5px;height:5px;background:#B49A68;left:50%;top:-2px;transform:rotate(45deg)}
+.editorial-hero .hero-date{color:#352B26;font-family:var(--serif);font-size:18px;letter-spacing:3px}
+.editorial-hero .hero-location{color:#75685D;margin:12px auto 22px}
+.hero-actions{justify-content:center}.hero-actions .button{min-width:185px}
+.hero-art{max-width:470px;padding:18px 34px 48px}
+.portrait-arch{border-radius:0;border:0;background:#f7f3ec;box-shadow:0 18px 45px #352b2614;transform:rotate(-3deg)}
+.portrait-arch img{object-fit:contain;mix-blend-mode:multiply}
+.arch-outline{inset:4px 20px 38px;border-radius:0;transform:rotate(2deg);border-color:#B49A6880}.arch-outline:after{display:none}
+.hero-card{width:155px;right:-5px;bottom:15px;padding:8px;transform:rotate(8deg)}
+.wedding-seal{left:4px;bottom:20px;background:#EAE1D4;color:#826b43;box-shadow:inset 0 0 0 5px #F7F3EC;width:78px;height:78px}
+.art-caption{top:31px;color:#75685D}.art-sparkle{color:#B49A68}.gold-orbit{display:none}
+.editorial-hero .hero-bottom{bottom:20px;color:#75685D}
+.countdown-band{max-width:none;padding:26px max(35px,calc((100vw - 1080px)/2));background:#EAE1D4;border:0}
+.countdown-note p,.countdown-unit strong{color:#352B26}.countdown-unit span{color:#75685D}
+.story{padding:85px 35px}.hosts{background:transparent;border-color:var(--line);color:#352B26}.hosts small,.invitation,.invitation-note{color:#75685D}
+.invitation-gallery{background:#EAE1D4;border-color:var(--line);padding-top:80px;padding-bottom:80px}
+.gallery-heading>p,.invitation-piece p,.gallery-footer>span{color:#75685D}.invitation-piece h3{color:#352B26}.invitation-piece figcaption>span,.card-meta{color:#826b43}
+.invitation-pair{max-width:850px;gap:75px}.card-image-button{box-shadow:0 16px 32px #352b2620}.card-zoom{border-radius:0;color:#352B26;background:#f7f3ecf0}.gallery-footer{border-color:#B49A6860}
+.prewedding-coming-soon{border-radius:0;background:#f1eade;border:1px solid var(--line);color:#75685D}.prewedding-coming-soon:before{border-radius:0}.prewedding-coming-soon h3{color:#352B26}.prewedding-coming-soon p{color:#75685D}
+.details{max-width:1200px;padding:75px 40px;background:#F7F3EC}.section-heading{justify-content:center;text-align:center;position:relative;margin-bottom:38px}.section-heading>.fine-print{position:absolute;right:0;bottom:0;color:#75685D}
+.detail-grid{grid-template-columns:1fr 1.6fr;gap:0}.detail-card{background:transparent;border:0;border-radius:0;box-shadow:none;padding:20px 30px;text-align:center;min-height:0}.detail-card:hover{transform:none;box-shadow:none}
+.detail-card:first-child{border-right:1px solid #B49A68}.detail-card:first-child h3{font-family:var(--serif);font-size:32px}.detail-card:nth-child(2) h3{font-size:20px}.detail-card>svg{margin-bottom:12px}.detail-card p{color:#75685D;font-size:14px}
+.detail-card:nth-child(3){grid-column:1/-1;display:flex;align-items:center;justify-content:center;gap:22px;border-top:1px solid var(--line);margin-top:28px;padding:22px}.detail-card:nth-child(3)>*{margin:0}.swatches{padding:0}.swatches span{width:34px;height:34px;border:2px solid #f7f3ec;box-shadow:0 0 0 1px #B49A68}
+.schedule{grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border-color:#B49A68;padding-top:26px;margin-top:26px}.schedule-item{padding:0 12px;text-align:center}.schedule-item:not(:last-child){border-right:1px solid var(--line)}.schedule-item:before{top:-31px;left:calc(50% - 4px);background:#F7F3EC;box-shadow:none}.schedule-number{display:none}.schedule-item time{font-size:28px;color:#352B26}.schedule-item h3{font-size:14px;color:#352B26;line-height:1.8}.schedule-item p{color:#75685D}
+.rsvp-section{background:#EAE1D4;border-color:var(--line)}.rsvp-intro h2 em{color:#826b43}.rsvp-intro p,.privacy{color:#75685D}.form-card{border-radius:0;background:#F7F3EC;box-shadow:none;border-color:#cdbb9b}.rsvp-form label,.choice strong{color:#352B26}.choice small{color:#75685D}.rsvp-form input,.rsvp-form select,.rsvp-form textarea,.choice{border-radius:0;border-color:#cdbb9b}.choice.selected{background:#EAE1D4;border-color:#826b43}
+.closing p,footer{color:#75685D}.closing{background:#F7F3EC}.card-lightbox{border-radius:0}
+@media(max-width:1000px){.site-header nav{gap:12px}.site-header .brand{font-size:18px}.editorial-hero{gap:20px;padding:40px 35px 60px}.editorial-hero h1{font-size:60px}.hero-card{width:118px;right:0}.section-heading>.fine-print{display:none}}
+@media(max-width:700px){.site-header{padding:16px 20px}.site-header .brand{font-size:19px}.site-header nav{display:none;position:absolute;top:100%;left:16px;right:16px;background:#F7F3EC;border:1px solid var(--line);padding:18px;flex-direction:column;align-items:stretch}.site-header nav.open{display:flex}.mobile-toggle{display:block;background:none;border:0;color:#826b43}.editorial-hero{display:flex;flex-direction:column;padding:32px 24px 60px;gap:24px;min-height:0}.editorial-hero .hero-inner{width:100%}.editorial-hero h1{font-size:52px;line-height:1.3}.editorial-hero h1 span{font-size:32px}.hero-poem{font-size:13px}.editorial-hero .hero-date{font-size:16px}.hero-art{width:86%;max-width:340px;padding:12px 26px 48px;margin:0}.hero-card{width:106px;right:-4px;bottom:20px}.hero-actions{gap:12px}.hero-actions .button{min-width:180px}.editorial-hero .hero-bottom>span{display:none}.countdown-band{padding:25px 20px;flex-direction:column;gap:20px}.story{padding:60px 24px}.invitation-gallery{padding:60px 28px}.invitation-pair{grid-template-columns:1fr;gap:38px;max-width:360px}.details{padding:55px 24px}.details h2{font-size:27px}.detail-grid{grid-template-columns:1fr}.detail-card{padding:20px 0}.detail-card>svg{float:none}.detail-card h3{max-width:none}.detail-card:first-child{border-right:0;border-bottom:1px solid var(--line)}.detail-card:first-child h3{font-size:29px}.detail-card:nth-child(2) h3{font-size:17px}.detail-card:nth-child(3){flex-wrap:wrap;gap:12px;margin-top:10px;padding:20px 0}.detail-card:nth-child(3) .swatches{width:100%;justify-content:center;margin-top:6px}.schedule{grid-template-columns:1fr;border-top:0;border-left:1px solid #B49A68;padding:0;margin:25px 0 0 6px;gap:0}.schedule-item{display:grid;grid-template-columns:75px 1fr;gap:4px 12px;text-align:left;padding:14px 0 14px 22px}.schedule-item:not(:last-child){border-right:0;border-bottom:1px solid var(--line)}.schedule-item:before{left:-4px;top:27px}.schedule-item time{font-size:24px}.schedule-item h3{margin:3px 0;font-size:14px}.schedule-item p{grid-column:2;margin:0}.rsvp-section{display:block;padding:55px 22px}.rsvp-intro h2{font-size:32px}.form-card{padding:26px 20px}.gallery-footer{flex-direction:column;align-items:center}.prewedding-coming-soon,.prewedding-coming-soon:before{border-radius:0}}
