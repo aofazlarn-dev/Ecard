@@ -1,4 +1,15 @@
 /* Layout matched to the approved stationery mockup. */
+#details .mockup-day strong{font-variant-numeric:lining-nums; font-feature-settings:'lnum' 1}
+#details .detail-card:first-child .text-link,#details .detail-card:nth-child(2) .text-link{display:inline-flex;gap:9px;min-height:42px;margin-top:8px;padding:8px 16px;border:1px solid #a28754;background:#fdf9f1;color:#65502d;font-size:13px;font-weight:500}
+#details .detail-card:first-child .text-link svg,#details .detail-card:nth-child(2) .text-link svg{width:20px;height:20px;stroke-width:1.8}
+#details .detail-card:nth-child(2) .text-link{background:#352b26;border-color:#352b26;color:#fffaf1}
+#details .detail-card .text-link:hover{background:#e6d7bd;color:#352b26;text-decoration:none}
+#details .detail-card:first-child{min-height:166px}#details .detail-card:nth-child(2){min-height:166px;margin-top:-166px}
+.countdown-band{flex-direction:column;text-align:center;gap:18px;padding:28px 24px;background:#f7f3ec}
+.countdown-note{max-width:850px;justify-content:center}.countdown-note p{font-size:20px;line-height:1.8;margin:8px 0 0}.countdown-digits{justify-content:center}
+#story{max-width:none;margin:0;padding:70px max(24px,calc((100vw - 1060px)/2));background:radial-gradient(ellipse at 50% 30%,#faf3e5 0%,#e5d4b8 100%);border-top:1px solid #b49a68;border-bottom:1px solid #b49a68;position:relative}
+#story:before{content:'';position:absolute;inset:18px;border:1px solid #b49a6870;pointer-events:none}#story .hosts{background:#fffaf055;border-color:#b49a6880}#story .invitation,#story .invitation-note{color:#6b5842}
+@media(max-width:700px){#details .detail-card:first-child,#details .detail-card:nth-child(2){min-height:0;margin-top:0}.countdown-note p{font-size:17px}.countdown-note>svg{display:none}.countdown-band{padding:26px 24px}.countdown-digits{gap:26px}#story{padding:55px 26px}#story:before{inset:12px}}
 @media(max-width:700px){.mockup-hero .mockup-eyebrow{margin-bottom:18px}}
 .site-header{position:relative;padding:16px max(30px,calc((100vw - 1220px)/2));min-height:70px;background:#faf7f1}
 .site-header .brand{font-size:24px;font-weight:400;color:#352b26}.site-header .brand small{display:none}.site-header nav{gap:26px}.site-header nav a{font-size:13px}.nav-rsvp{min-width:150px;justify-content:center}
