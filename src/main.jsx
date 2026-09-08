@@ -5,4 +5,5 @@ import './styles.css';
 import './luxury.css';
 import './ivory.css';
 import './mockup.css';
+import './note.css';
 createRoot(document.getElementById('root')).render(<React.StrictMode><App /></React.StrictMode>);
