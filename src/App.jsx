@@ -8,7 +8,7 @@ import { blankRsvp, download } from './domain';
 import RsvpForm from './RsvpForm';
 import Admin from './Admin';
 import PreWeddingGallery from './PreWeddingGallery';
-import { WeddingHero, Countdown, InvitationGallery, useWeddingMotion } from './WeddingExperience';
+import { OpeningExperience, WeddingHero, Countdown, InvitationGallery, useWeddingMotion } from './WeddingExperience';
 
 function Botanical({ className = '' }) {
   return <svg className={`botanical ${className}`} viewBox="0 0 300 450" fill="none" aria-hidden="true"><path d="M160 443C100 325 185 194 154 15M145 346C91 323 57 281 29 234M148 285C201 258 241 218 257 176M159 203C108 160 80 121 70 77M163 133C203 106 227 68 224 24" stroke="currentColor" strokeWidth="2"/>{[[125,320,-55],[75,280,-55],[38,238,-45],[180,259,45],[220,219,40],[251,179,30],[135,175,-50],[100,132,-40],[75,88,-30],[185,108,35],[214,63,25],[155,59,-10]].map(([x,y,r],i)=><ellipse key={i} cx={x} cy={y} rx="13" ry="33" transform={`rotate(${r} ${x} ${y})`} fill="currentColor" opacity={.22 + i % 3 * .13}/>)}</svg>;
@@ -30,6 +30,7 @@ export default function App() {
   const url = location.origin + location.pathname;
   const unconfigured = !demo && !configured;
   return <>
+    <OpeningExperience/>
     <div className="reading-progress" style={{ transform: `scaleX(${progress})` }} aria-hidden="true"/>
     {demo && <div className="demo-banner">โหมดทดลอง · ข้อมูลบันทึกเฉพาะเบราว์เซอร์นี้ ยังไม่ส่งถึงผู้จัดงาน</div>}
     {w.isSample && <div className="sample-note">ตัวอย่างการ์ด · ชื่อ วัน และสถานที่ยังเป็นข้อมูลสาธิต</div>}
