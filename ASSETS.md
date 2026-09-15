@@ -1,5 +1,9 @@
 # Wedding website artwork
 
+## Champagne hero, September 2026
+
+`public/images/gold-stationery.png` was generated with the built-in imagegen tool using the supplied website screenshot as a visual reference. Prompt: Photographic ivory invitation on champagne silk, white roses and sage foliage, antique gold tray, gold wax seal and ivory ring box. Match the reference card and illustrated couple. Card lettering: Mingkamol & Yutthakit; SAVE THE DATE; 28 NOVEMBER 2026. Entire card visible, warm cream and muted antique gold. No webpage UI, navigation, buttons or floating text outside the card. Left edge fades to ivory silk. Landscape 3:2.
+
 ## Original invitation (unchanged artwork)
 
 - `public/images/card-front.webp`: encoded from `Card/Wedding_Front_5x7_3mm_Bleed_300dpi.png` at original dimensions.

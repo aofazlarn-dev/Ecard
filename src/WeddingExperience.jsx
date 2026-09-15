@@ -10,11 +10,12 @@ export function WeddingHero() {
       <p className="mockup-eyebrow">TOGETHER WITH OUR FAMILIES</p>
       <h1>{w.brideDisplay}<span>&</span>{w.groomDisplay}</h1>
       <p className="mockup-poem">หนึ่งคำว่าเรา…กับเรื่องราวอีกตลอดไป</p>
-      <div className="mockup-rule"/>
+      <div className="mockup-rule"><Heart size={15} fill="currentColor"/></div>
       <p className="mockup-date">{w.dateEnglish}</p>
-      <div className="mockup-actions"><a href="#rsvp" className="button">ตอบรับคำเชิญ</a><a href="#details" className="text-link">รายละเอียดงาน</a></div>
+      <div className="mockup-actions"><a href="#rsvp" className="button">ตอบรับคำเชิญ <ArrowUpRight size={17}/></a><a href="#details" className="text-link">รายละเอียดงาน</a></div>
     </div>
-    <div className="mockup-hero-photo"><img src={asset('stationery-couple.png')} alt="การ์ดกระดาษงาช้างประดับกล้วยไม้และผ้าไหม พร้อมภาพตัวละครบ่าวสาว" width="1536" height="1024" fetchPriority="high"/></div>
+    <div className="mockup-hero-photo"><img src={asset('gold-stationery.png')} alt="การ์ดบ่าวสาวบนผ้าไหมสีครีม ประดับดอกกุหลาบขาว ถาดทองและแหวนแต่งงาน" width="1536" height="1024" fetchPriority="high"/></div>
+    <span className="hero-sentiment" aria-hidden="true">Better<br/>Together ♡</span>
   </section>;
 }
 
