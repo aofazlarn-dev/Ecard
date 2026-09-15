@@ -1,36 +1,47 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowDown, ArrowUpRight, ChevronLeft, ChevronRight, Download, Heart, Maximize2, Sparkles, X, ZoomIn, ZoomOut } from 'lucide-react';
 import { wedding as w } from './config';
+import weddingLogo from '../Logo.png';
+import './opening.css';
 
 export const asset = name => `${import.meta.env.BASE_URL}images/${name}`;
 
 export function OpeningExperience() {
-  const [open, setOpen] = useState(() => sessionStorage.getItem('wedding-opened') !== 'true');
+  const [open, setOpen] = useState(() => { try { return !location.hash && sessionStorage.getItem('wedding-envelope-opened') !== 'true'; } catch { return !location.hash; } });
   const [leaving, setLeaving] = useState(false);
-  const reduced = useRef(matchMedia('(prefers-reduced-motion: reduce)').matches);
+  const dialog = useRef(null), timer = useRef(null);
+  const finish = () => {
+    clearTimeout(timer.current);
+    try { sessionStorage.setItem('wedding-envelope-opened', 'true'); } catch { /* Opening still works when storage is unavailable. */ }
+    setOpen(false);
+    document.querySelector('.wedding-wordmark')?.focus({ preventScroll: true });
+  };
   useEffect(() => {
     if (!open) return;
-    const closeOnEscape = event => { if (event.key === 'Escape') close(); };
+    dialog.current.showModal();
     const previous = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
-    window.addEventListener('keydown', closeOnEscape);
-    return () => { document.body.style.overflow = previous; window.removeEventListener('keydown', closeOnEscape); };
+    return () => { clearTimeout(timer.current); dialog.current?.close(); document.body.style.overflow = previous; };
   }, [open]);
   const close = () => {
     if (leaving) return;
-    sessionStorage.setItem('wedding-opened', 'true');
-    if (reduced.current) return setOpen(false);
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return finish();
     setLeaving(true);
-    window.setTimeout(() => setOpen(false), 620);
+    timer.current = window.setTimeout(finish, 1600);
   };
   if (!open) return null;
-  return <section className={`opening-experience ${leaving ? 'is-leaving' : ''}`} role="dialog" aria-modal="true" aria-labelledby="opening-title">
-    <div className="opening-glow" aria-hidden="true"/>
-    <div className="opening-card">
-      <img src={asset('stationery-couple.png')} alt="" width="768" height="512"/>
-      <div className="opening-copy"><span>THE WEDDING OF</span><h1 id="opening-title">{w.brideDisplay}<i>&</i>{w.groomDisplay}</h1><p>{w.dateEnglish}</p><button className="opening-button" autoFocus onClick={close}>เปิดคำเชิญ <ArrowDown size={16}/></button><button className="opening-skip" onClick={close}>ข้าม</button></div>
+  return <dialog ref={dialog} className={`envelope-opening ${leaving ? 'is-opening' : ''}`} aria-labelledby="opening-title" onCancel={e => { e.preventDefault(); finish(); }}>
+    <div className="envelope-intro"><span>A LETTER, SEALED WITH LOVE</span><h2 id="opening-title">คำเชิญนี้…<br/>แด่คนสำคัญของเรา</h2><p>{w.dateEnglish}</p></div>
+    <div className="envelope-stage">
+      <div className="envelope-letter"><img src={weddingLogo} alt=""/><p>{w.brideDisplay} <i>&</i> {w.groomDisplay}</p><span>หนึ่งคำว่าเรา…กับเรื่องราวอีกตลอดไป</span></div>
+      <div className="envelope-pocket" aria-hidden="true"/>
+      <div className="envelope-flap" aria-hidden="true"/>
+      <button className="envelope-seal" aria-label="เปิดคำเชิญ" autoFocus onClick={close} aria-disabled={leaving}><img src={weddingLogo} alt=""/></button>
+      <span className="envelope-inscription" aria-hidden="true">WITH LOVE · {w.dateEnglish}</span>
     </div>
-  </section>;
+    <p className="envelope-hint">แตะตราประทับ เพื่อเปิดคำเชิญ</p>
+    <button className="envelope-skip" onClick={finish}>ข้ามเข้าสู่คำเชิญ <ArrowUpRight size={14}/></button>
+  </dialog>;
 }
 
 export function WeddingHero() {

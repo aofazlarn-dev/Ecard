@@ -1,0 +1,37 @@
+.envelope-opening{position:fixed;inset:0;margin:0;border:0;padding:38px 24px;width:100%;max-width:none;height:100dvh;max-height:none;overflow:auto;color:#685238;background:repeating-linear-gradient(118deg,#ffffff00 0%,#ffffff70 12%,#cbb99930 22%,#fffdf500 33%),#f5eddf;text-align:center;isolation:isolate}
+.envelope-opening[open]{display:flex;flex-direction:column;align-items:center;justify-content:center}
+.envelope-opening::backdrop{background:#faf5eb}
+.envelope-opening:before{content:'';position:fixed;inset:16px;border:1px solid #b6996250;pointer-events:none}
+.envelope-intro>span{font:9px Georgia,serif;letter-spacing:4px;color:#927344}
+.envelope-intro h2{font:400 clamp(25px,3vw,36px)/1.65 'Noto Serif Thai',serif;margin:17px 0 14px;color:#685238}
+.envelope-intro p{font:10px Georgia,serif;letter-spacing:3px;color:#947948;margin:0 0 60px}
+.envelope-stage{position:relative;width:min(540px,85vw);aspect-ratio:1.7;background:#e6d6b9;border:1px solid #cfb98d;border-radius:3px;box-shadow:0 28px 55px #79603c26,0 4px 8px #79603c17;perspective:1200px}
+.envelope-letter{position:absolute;inset:12px 18px;background:#fffdf7;border:1px solid #e0cdab;box-shadow:0 2px 12px #795d3220;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.envelope-letter:before{content:'';position:absolute;inset:9px;border:1px solid #dcc7a366}
+.envelope-letter img{width:76px;height:76px;object-fit:contain;mix-blend-mode:multiply}
+.envelope-letter p{font:400 clamp(19px,3vw,28px)/1.6 'Noto Serif Thai',serif;margin:12px 0}
+.envelope-letter i{font-family:'Playfair Display',serif;color:#ae8750}
+.envelope-letter>span{font-size:10px;color:#9b8565}
+.envelope-pocket{position:absolute;inset:0;z-index:2;background:linear-gradient(31deg,#eddfc5 49.7%,transparent 50%) bottom left/50% 100% no-repeat,linear-gradient(-31deg,#f5e9d3 49.7%,transparent 50%) bottom right/50% 100% no-repeat;clip-path:polygon(0 0,50% 54%,100% 0,100% 100%,0 100%)}
+.envelope-pocket{background:linear-gradient(110deg,#eddfc5,#f5e9d3)}
+.envelope-pocket:after{content:'';position:absolute;inset:0;background:linear-gradient(148deg,transparent 49.6%,#c5ac7d66 50%,transparent 50.4%) left bottom/50% 100% no-repeat,linear-gradient(-148deg,transparent 49.6%,#c5ac7d55 50%,transparent 50.4%) right bottom/50% 100% no-repeat}
+.envelope-flap{position:absolute;inset:0 0 42%;z-index:3;transform-origin:top;backface-visibility:hidden;background:linear-gradient(165deg,#fffcf3,#e7d7b8);clip-path:polygon(0 0,100% 0,50% 100%);filter:drop-shadow(0 2px 1px #785a3330)}
+.envelope-seal{position:absolute;z-index:4;left:50%;top:48%;transform:translate(-50%,-50%);width:86px;height:86px;padding:9px;display:grid;place-items:center;border-radius:46% 51% 47% 50%;border:1px solid #a67c37;background:linear-gradient(135deg,#ecd49a 0%,#bb914c 28%,#f4dfaa 49%,#b88b42 76%,#dec085);box-shadow:0 8px 14px #74512440,inset 0 0 0 4px #e8ca8c,inset 0 0 0 6px #ac813f;cursor:pointer;transition:box-shadow .3s}
+.envelope-seal img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;filter:sepia(1) saturate(1.4) contrast(1.4)}
+.envelope-seal:hover{box-shadow:0 10px 22px #74512450,inset 0 0 0 4px #f5dda7,inset 0 0 0 6px #ac813f}
+.envelope-seal:focus-visible{outline:2px solid #89652c;outline-offset:7px}
+.envelope-inscription{position:absolute;bottom:24px;left:0;right:0;z-index:3;font:8px Georgia,serif;letter-spacing:2.6px;color:#a68c5d}
+.envelope-hint{font-size:12px;margin:30px 0 13px;color:#8b7554}
+.envelope-skip{display:inline-flex;align-items:center;gap:7px;min-height:44px;border:0;background:transparent;font:11px 'Noto Sans Thai',sans-serif;color:#8a7457;cursor:pointer}
+.is-opening .envelope-seal{animation:seal-lift .35s ease-in forwards}
+.is-opening .envelope-flap{animation:flap-open .55s .2s ease-in-out forwards}
+.is-opening .envelope-letter{animation:letter-rise .65s .65s cubic-bezier(.2,.7,.3,1) forwards}
+.envelope-opening.is-opening{animation:envelope-reveal .4s 1.2s ease-in forwards;pointer-events:none}
+.is-opening .envelope-intro,.is-opening .envelope-hint{transition:opacity .3s;opacity:0}
+@keyframes seal-lift{to{transform:translate(-50%,-75%) scale(1.15) rotate(-12deg);opacity:0}}
+@keyframes flap-open{to{transform:rotateX(180deg)}}
+@keyframes letter-rise{to{transform:translateY(-42%);box-shadow:0 20px 40px #795d3226}}
+@keyframes envelope-reveal{to{opacity:0}}
+@media(max-width:600px){.envelope-opening{padding:28px 18px}.envelope-intro>span{font-size:8px;letter-spacing:2.5px}.envelope-intro p{margin-bottom:50px}.envelope-stage{width:min(540px,88vw)}.envelope-seal{width:68px;height:68px}.envelope-letter img{width:48px;height:48px}.envelope-letter p{margin:6px 0;font-size:20px}.envelope-letter>span{font-size:8px}.envelope-inscription{font-size:6px;bottom:18px;letter-spacing:1.6px}}
+@media(max-height:600px){.envelope-opening[open]{justify-content:flex-start}.envelope-stage{flex-shrink:0;width:min(400px,80vw)}.envelope-intro h2{font-size:23px}.envelope-intro p{margin-bottom:28px}}
+@media(prefers-reduced-motion:reduce){.envelope-opening *,.envelope-opening{animation:none!important;transition:none!important}}
