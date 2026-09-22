@@ -64,7 +64,7 @@ export function Countdown() {
   const [now,setNow] = useState(Date.now());
   useEffect(()=>{const timer=setInterval(()=>setNow(Date.now()),1000);return()=>clearInterval(timer);},[]);
   const remaining=Math.max(0,Math.floor((new Date(w.start).getTime()-now)/1000));
-  const values=[Math.floor(remaining/86400),Math.floor(remaining%86400/3600),Math.floor(remaining%3600/60),remaining%60];
+  const values=[Math.floor(remaining/86400),Math.floor(remaining%86400/3600),Math.floor(remaining%3600/60)];
   return <section className="countdown-band" aria-label="นับถอยหลังถึงวันงาน"><div className="countdown-note"><Sparkles size={20} strokeWidth={1}/><div><span className="eyebrow">COUNTING EVERY MOMENT</span><p>{remaining ? 'ขอเรียนเชิญทุกท่านร่วมเป็นพยานในวันเริ่มต้นความสุขอย่างเป็นทางการของเรา' : 'ขอบคุณที่เป็นส่วนหนึ่งในวันของเรา'}</p></div></div><div className="countdown-digits" aria-live="off">{values.map((value,i)=><div className="countdown-unit" key={i}><strong>{String(value).padStart(2,'0')}</strong><span>{['วัน','ชั่วโมง','นาที','วินาที'][i]}</span></div>)}</div></section>;
 }
 

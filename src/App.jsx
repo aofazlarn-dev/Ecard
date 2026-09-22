@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import weddingLogo from '../Logo.png';
-import { ArrowDown, ArrowUpRight, CalendarDays, Check, Heart, MapPin, Menu, X, Copy, QrCode } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, CalendarDays, Check, Heart, MapPin, Menu, X, Copy, QrCode, Leaf, Gem, HandHeart, Droplets } from 'lucide-react';
 import { QRCodeSVG } from 'qrcode.react';
 import { wedding as w } from './config';
 import { demo, configured, submitRsvp, editToken, answerKey } from './api';
@@ -10,6 +10,12 @@ import Admin from './Admin';
 import PreWeddingGallery from './PreWeddingGallery';
 import { OpeningExperience, WeddingHero, Countdown, InvitationGallery, useWeddingMotion } from './WeddingExperience';
 
+function WaiIcon({ size = 25, strokeWidth = 1.2 }) {
+  return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 3v11M12 3c-1-1-2 0-2 1L8.5 11 6 14l4 5 2-5M12 3c1-1 2 0 2 1l1.5 7 2.5 3-4 5-2-5M6 14l-3 3 5 5 2-3M18 14l3 3-5 5-2-3"/><path d="m8.5 11 1 3m6-3-1 3"/></svg>;
+}
+function OfferingTrayIcon({ size = 25, strokeWidth = 1.2 }) {
+  return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 12h18c-1 4-4 5-9 5s-8-1-9-5ZM10 17v3m4-3v3m-7 2h10l-3-2h-4l-3 2Z"/><circle cx="9" cy="8" r="3"/><circle cx="15" cy="8" r="3"/><path d="m12 3 2-2 2 2-2 2-2-2ZM2 12h20"/></svg>;
+}
 function Botanical({ className = '' }) {
   return <svg className={`botanical ${className}`} viewBox="0 0 300 450" fill="none" aria-hidden="true"><path d="M160 443C100 325 185 194 154 15M145 346C91 323 57 281 29 234M148 285C201 258 241 218 257 176M159 203C108 160 80 121 70 77M163 133C203 106 227 68 224 24" stroke="currentColor" strokeWidth="2"/>{[[125,320,-55],[75,280,-55],[38,238,-45],[180,259,45],[220,219,40],[251,179,30],[135,175,-50],[100,132,-40],[75,88,-30],[185,108,35],[214,63,25],[155,59,-10]].map(([x,y,r],i)=><ellipse key={i} cx={x} cy={y} rx="13" ry="33" transform={`rotate(${r} ${x} ${y})`} fill="currentColor" opacity={.22 + i % 3 * .13}/>)}</svg>;
 }
@@ -38,7 +44,15 @@ export default function App() {
     <main>
       <WeddingHero/>
       <Countdown/>
-      <section id="details" className="mockup-details"><div className="section-heading"><div><div className="eyebrow">THE CELEBRATION</div><h2>นัดหมายแห่งความสุข</h2></div><span className="fine-print">เก็บวันนี้ไว้ให้เรานะ</span></div><div className="detail-grid"><article className="detail-card"><h3 className="mockup-day"><strong>{w.dateLabel.split(' ')[0]}</strong><span>{w.dateLabel.split(' ').slice(1).join(' ')}</span></h3><p>{w.timeLabel}</p><CalendarLink/></article><article className="detail-card"><MapPin/><h3>{w.venue}</h3><p>{w.address}</p>{w.mapUrl ? <a className="text-link" href={w.mapUrl} target="_blank" rel="noreferrer"><MapPin size={20}/>ดูแผนที่ <ArrowUpRight size={16}/></a> : <span className="fine-print">แผนที่จะพร้อมเมื่อยืนยันสถานที่</span>}</article><article className="detail-card"><Heart/><h3>Dress code</h3><p>{w.dressCodeLabel}</p><div className="swatches" aria-label={`Dress code ${w.dressCodeLabel}`}>{w.dressCode.map(c => <span key={c} style={{background:c}}/>)}</div></article></div><div className="schedule">{w.schedule.map((item,i)=><div className="schedule-item" key={item.time}><span className="schedule-number">0{i+1}</span><time>{item.time}</time><h3>{item.title}</h3><p>{item.detail}</p></div>)}</div></section>
+      <section id="details" className="mockup-details">
+        <div className="section-heading"><div><div className="celebration-ornament" aria-hidden="true"><Leaf size={24}/></div><h2>นัดหมายแห่งความสุข</h2><p className="celebration-caption">ร่วมเป็นส่วนหนึ่งในวันสำคัญของเรา</p></div></div>
+        <div className="detail-grid">
+          <article className="detail-card"><h3 className="mockup-day"><strong>{w.dateLabel.split(' ')[0]}</strong><span>{w.dateLabel.split(' ').slice(1).join(' ')}</span></h3><p>{w.timeLabel}</p></article>
+          <article className="detail-card"><div className="venue-title"><MapPin size={24}/><h3>{w.venue}</h3></div><p>{w.address}</p><div className="venue-actions"><CalendarLink/>{w.mapUrl && <a className="text-link" href={w.mapUrl} target="_blank" rel="noreferrer"><MapPin size={20}/>ดูแผนที่</a>}</div></article>
+        </div>
+        <div className="schedule">{w.schedule.map((item,i)=>{const Icon = [WaiIcon, OfferingTrayIcon, Gem, HandHeart, Droplets][i] || Heart; return <div className="schedule-item" key={item.time}><span className="ceremony-icon" aria-hidden="true"><Icon size={25} strokeWidth={1.2}/></span><time>{item.time}</time><h3>{item.title}</h3><p>{item.detail}</p></div>;})}</div>
+        <div className="dress-editorial"><h3>DRESS CODE</h3><div className="dress-colors" aria-label={w.dressCodeLabel}>{w.dressCode.map((c,i)=><div key={c}><span style={{background:c}}/><small>{w.dressCodeLabel.split(' · ')[i]}</small></div>)}</div><p>อบอุ่น เรียบง่าย ไปด้วยกัน</p></div>
+      </section>
       <section id="story" className="story section reveal">
         {['top-left','top-right','bottom-left','bottom-right'].map(corner => <Botanical key={corner} className={`note-corner ${corner}`}/>)}
         <div className="eyebrow">A LITTLE NOTE TO YOU</div>

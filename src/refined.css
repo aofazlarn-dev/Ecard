@@ -1,0 +1,92 @@
+/* Approved Refined Original: restrained surfaces, clear hierarchy, mobile reply card. */
+body{background:#fffdf9}
+.site-header{min-height:82px;padding-top:10px;padding-bottom:10px;border-bottom:1px solid #ebdfca;background:#fffdf9}
+.wedding-logo{width:58px;height:58px}.wedding-wordmark-copy strong{font-size:22px}
+.site-header .nav-rsvp{background:transparent;color:#70552f;box-shadow:none;border:1px solid #bfa16c;min-height:44px;padding:10px 23px}
+.mockup-hero{grid-template-columns:42% 58%;height:auto;min-height:660px;background:#fffdf9}
+.mockup-hero-copy{padding:55px 20px 55px 7vw;text-align:left}
+.mockup-hero h1{font-size:clamp(64px,7vw,104px);color:#88632f;line-height:1.22;font-weight:400}
+.mockup-hero h1 span{justify-content:flex-start;padding-left:90px;font-size:48px;margin:4px 0}
+.mockup-hero h1 span:before,.mockup-hero h1 span:after{display:none}
+.mockup-eyebrow{font-size:10px;letter-spacing:2px;margin-bottom:22px}
+.mockup-poem{font-size:16px;color:#6c573c;line-height:1.9;margin:22px 0}
+.mockup-rule{width:85px;margin:24px 0;background:#c5a36b}.mockup-rule svg{display:none}
+.mockup-date{font-size:17px;letter-spacing:3px;margin:22px 0 26px}
+.mockup-actions{justify-content:flex-start;gap:24px}.mockup-actions .button{min-width:185px;font-size:14px}
+.mockup-actions .text-link{font-size:13px;border:0}.hero-sentiment{display:none}
+.mockup-hero-photo img{object-position:58% center}.mockup-hero-photo:after{background:linear-gradient(90deg,#fffdf9,transparent 25%)}
+main .button{background:linear-gradient(115deg,#d5b77d,#c39b57);color:#49371e;box-shadow:0 4px 12px #95733812;border-color:#c4a068}
+main .button:hover{background:linear-gradient(115deg,#dfc58f,#cba563);box-shadow:0 6px 15px #95733820}
+.countdown-band{max-width:none;padding:24px;background:#fdfaf4;border-top:1px solid #ebdfca;border-bottom:1px solid #ebdfca}
+.countdown-note{display:none}.countdown-digits{gap:0;width:min(430px,100%)}.countdown-unit{flex:1;padding:0 25px}.countdown-unit:not(:last-child){border-right:1px solid #d9c49e}.countdown-unit:not(:last-child):after{display:none}.countdown-unit strong{font-size:40px;color:#775a32}.countdown-unit span{font-size:12px;color:#76654e}
+main #details{background:none;border:0;box-shadow:none;padding:65px 35px 30px;margin:0 auto;display:grid;grid-template-columns:1fr}
+main #details:after{display:none}.mockup-details .section-heading{text-align:center;margin-bottom:35px}.mockup-details .section-heading .eyebrow{display:block;font-size:9px;margin-bottom:14px}.mockup-details h2{font-size:32px}.mockup-details h2:after{display:none}
+.mockup-details .detail-grid{display:grid;grid-template-columns:34% 66%;background:#fffdfa;border:1px solid #d8bc8a;border-radius:24px;padding:30px 25px;position:relative;row-gap:0}
+#details .detail-card:first-child,#details .detail-card:nth-child(2){width:auto;margin:0;min-height:0;align-self:stretch;background:none;border-radius:0;box-shadow:none;transform:none;padding:12px 24px}
+#details .detail-card:nth-child(2){border-left:1px solid #e0ccaa;text-align:left}#details .detail-card:nth-child(2) h3{font-size:19px;line-height:1.8}
+#details .detail-card:first-child .text-link,#details .detail-card:nth-child(2) .text-link{background:transparent;color:#695032;box-shadow:none;border:1px solid #cdb58b;border-radius:16px;font-size:13px;min-height:44px;padding:9px 18px}
+#details .detail-card:nth-child(3){grid-column:1/-1;border:0;border-top:1px solid #eee3d1;margin-top:25px;padding:24px 0 0;background:none;box-shadow:none}
+.mockup-details .schedule{margin-top:42px;padding-top:23px;border-color:#d9c29c;gap:16px;grid-template-columns:repeat(5,minmax(0,1fr))}
+.mockup-details .schedule-item{display:block;padding:0;text-align:center}.mockup-details .schedule-item:before{left:calc(50% - 4px);top:-28px;border-radius:0;transform:rotate(45deg);background:#fffdf9;box-shadow:0 0 0 5px #fffdf9}.schedule-number{display:none}.mockup-details .schedule-item time{font-size:25px;color:#765832}.mockup-details .schedule-item h3{font-size:14px;line-height:1.8;margin-top:9px}.mockup-details .schedule-item p{font-size:12px}
+main #story.story,main #prewedding,main #invitation,main #rsvp{background:#fffdf9;border-color:#e1ceaa;box-shadow:none;margin-top:65px;margin-bottom:65px}
+main #prewedding{border:0}main #prewedding:after{display:none}
+main #story.story:after,main #invitation:after,main #rsvp:after{background-size:72px 72px;opacity:.45}
+main #rsvp{align-items:start;background:#faf6ee;gap:55px}.rsvp-intro h2{font-size:40px}.rsvp-intro p{color:#75644d;font-size:15px}.rsvp-intro .botanical{opacity:.22}
+#rsvp .form-card{border:1px solid #e3d5bd;padding:34px;border-radius:20px;box-shadow:0 10px 28px #97794a08;background:#fffdf9}
+.rsvp-form label,.attendance legend{font-size:14px;color:#5c4a35}.rsvp-form input,.rsvp-form select,.rsvp-form textarea{font-size:16px;min-height:48px;border-radius:10px;background:#fffefa;border-color:#dfd5c4}
+.rsvp-form .choice{border-radius:12px;min-height:82px;padding:13px;gap:10px}.rsvp-form .choice input{min-height:16px;width:16px}.rsvp-form .choice strong{font-size:13px;color:#59442c}.rsvp-form .choice small{font-size:11px;color:#7b6c57}.rsvp-form .choice.selected{background:#fbf6eb;border-color:#bb9657}
+.guest-count-field{margin-bottom:22px}.guest-count-field>label{margin-bottom:8px}.guest-stepper{display:grid;grid-template-columns:50px 75px 50px;width:max-content;border:1px solid #d9c7aa;border-radius:12px;overflow:hidden}.guest-stepper button{border:0;background:#f9f3e9;color:#705534;font-size:24px;min-height:48px}.guest-stepper button:disabled{cursor:default;opacity:.4}.guest-stepper input{border:0;border-left:1px solid #e5d8c2;border-right:1px solid #e5d8c2;border-radius:0;text-align:center;appearance:textfield;-moz-appearance:textfield}.guest-stepper input::-webkit-inner-spin-button{appearance:none}
+.rsvp-extras{border:1px solid #dfd5c4;border-radius:12px;margin-bottom:22px;padding:0 16px}.rsvp-extras summary{padding:16px 0;cursor:pointer;font-size:14px;color:#614b30}.rsvp-extras summary span{font-size:12px;color:#7b6c57}.rsvp-extras[open] summary{margin-bottom:8px;border-bottom:1px solid #eee3d2}.rsvp-extras .form-grid{grid-template-columns:1fr}
+.rsvp-form .privacy{font-size:12px;line-height:1.8;color:#76664f}.rsvp-form .form-actions .button{min-height:52px;font-size:15px}
+@media(max-width:700px){
+ .site-header{min-height:76px}.wedding-logo{width:48px;height:48px}.wedding-wordmark-copy strong{font-size:19px}
+ .mockup-hero{min-height:0}.mockup-hero-copy{display:contents}.mockup-hero h1{font-size:54px;text-align:center}.mockup-hero h1 span{justify-content:center;padding-left:0;font-size:32px}.mockup-poem{font-size:13px;text-align:center;margin:15px 20px}.mockup-rule{margin:10px auto}.mockup-date{text-align:center;font-size:14px;margin:12px 0 18px}.mockup-actions{align-items:center;gap:12px;padding:18px 25px 30px}.mockup-hero-photo:after{background:linear-gradient(#fffdf9,transparent 16%)}
+ main #details{width:100%;padding:45px 20px 20px}.mockup-details h2{font-size:27px}.mockup-details .detail-grid{grid-template-columns:1fr;padding:24px 18px}.mockup-details .mockup-day strong{font-size:66px}#details .detail-card:first-child,#details .detail-card:nth-child(2){padding:16px 0;text-align:center}#details .detail-card:nth-child(2){border-left:0;border-top:1px solid #e4d5bb}#details .detail-card:nth-child(2) h3{font-size:17px}#details .detail-card:nth-child(3){margin-top:12px}
+ .mockup-details .schedule{grid-template-columns:1fr;border-left:1px solid #d9c29c;border-top:0;margin:30px 0 0 20px;padding:0 0 0 25px;gap:24px}.mockup-details .schedule-item{text-align:left;display:grid;grid-template-columns:75px 1fr;column-gap:14px}.mockup-details .schedule-item:before{left:-30px;top:10px}.mockup-details .schedule-item h3{margin:0;font-size:14px}.mockup-details .schedule-item p{grid-column:2}.mockup-details .schedule-item time{font-size:23px}
+ main #story.story,main #prewedding,main #invitation,main #rsvp{margin-top:35px;margin-bottom:35px}main #rsvp{padding:30px 16px}.rsvp-intro h2{font-size:30px}.rsvp-intro .botanical{display:none}#rsvp .form-card{padding:23px 16px}.rsvp-form .form-grid{grid-template-columns:1fr 1fr;gap:12px}.rsvp-form .rsvp-extras .form-grid{grid-template-columns:1fr}.rsvp-form .choice{padding:10px 8px}.rsvp-form .choice strong{font-size:12px}.rsvp-form .choice small{font-size:10px}
+}
+.mockup-details .detail-grid:after{content:'';position:absolute;inset:8px;pointer-events:none;background:url('../public/images/gold-floral-corner.svg') left top/65px 65px no-repeat,url('../public/images/gold-floral-corner.svg') right bottom/65px 65px no-repeat;opacity:.5}
+.mockup-details .schedule-item{border-right:0}
+@media(max-width:700px){main #rsvp{padding:30px 10px}#rsvp .form-card{padding:23px 14px}.rsvp-form .choice small{line-height:1.6}.rsvp-intro{padding-left:12px;padding-right:12px}}
+@media(max-width:370px){.rsvp-form .form-grid,.attendance{grid-template-columns:1fr}}
+
+/* Match the approved reference's compact hero and separate ceremony / dress sections. */
+@media(min-width:701px){
+ .mockup-hero{min-height:0;height:clamp(530px,49.4vw,690px)}
+ .mockup-hero-copy{padding:28px 16px 30px 8vw}
+ .mockup-hero h1{font-size:clamp(65px,7.3vw,106px);line-height:1.12}
+ .mockup-hero h1 span{font-size:clamp(38px,4.5vw,60px);line-height:1;margin:2px 0;padding-left:8vw}
+ .mockup-eyebrow{display:none}.mockup-poem{margin:22px 0 17px;font-size:clamp(14px,1.6vw,20px)}
+ .mockup-rule{margin:20px 0}.mockup-date{margin:17px 0 24px}.mockup-actions .button{min-height:49px}
+ .wedding-wordmark-copy small{display:none}.wedding-wordmark-copy{border-left:1px solid #d5b780;padding-left:23px}
+ .site-header nav>a:nth-child(2),.site-header nav>a:nth-child(3){display:block}
+ .site-header nav{gap:22px}.site-header nav a{font-size:12px}
+}
+.mockup-hero-photo{margin-left:-12%;width:112%}.mockup-hero-photo img{object-position:60% center}
+.countdown-band{background:linear-gradient(120deg,#fffdf9,#f8f0e3 65%,#fffdf9);padding:19px}
+main #details{max-width:none;width:100%;padding:32px max(30px,calc((100vw - 1060px)/2)) 30px;border-radius:0;isolation:isolate;background:linear-gradient(130deg,#fffdf9eb 60%,#fffdf9a8),url('../public/images/gold-stationery.png') center bottom/cover}
+.mockup-details .section-heading{margin-bottom:29px}.mockup-details .section-heading>div{width:100%}
+.celebration-ornament{display:flex;align-items:center;justify-content:center;gap:13px;color:#be9857;margin-bottom:9px}.celebration-ornament:before,.celebration-ornament:after{content:'';height:1px;width:50px;background:#ddc293}
+.celebration-caption{font-size:14px;color:#8d7756;margin:0;line-height:1.8}
+.mockup-details .detail-grid{grid-template-columns:36% 64%;padding:22px 24px;background:#fffdf9e8;border-radius:22px;box-shadow:0 12px 32px #98733a0a}
+#details .detail-card:first-child,#details .detail-card:nth-child(2){padding:8px 26px}
+#details .detail-card:first-child{display:flex;flex-direction:column;justify-content:center}.mockup-day strong{font-size:80px}
+.venue-title{display:flex;gap:12px;align-items:flex-start}.venue-title>svg{flex-shrink:0;color:#bd9654;margin-top:4px}.venue-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px}
+#details .detail-card:nth-child(2)>p{margin-left:36px}.venue-actions{padding-left:36px}
+#details .detail-card:nth-child(2) .text-link{margin:0;min-width:135px;justify-content:center;border-radius:13px}
+.mockup-details .detail-grid:after{inset:-18px;background-size:110px 110px;opacity:.85}
+.mockup-details .schedule{position:relative;margin:30px 0 0;padding:0;border:0;gap:22px}
+.mockup-details .schedule:before{content:'';position:absolute;top:28px;left:9%;right:9%;height:1px;background:#d4b67f}
+.mockup-details .schedule-item{display:flex;flex-direction:column;align-items:center;border:0;padding:0;background:none}
+.mockup-details .schedule-item:before{display:none}
+.ceremony-icon{position:relative;display:grid;place-items:center;width:57px;height:57px;border:1px solid #d0ad70;border-radius:50%;background:#fffdf9;color:#b48b46;margin:0 0 12px}
+.mockup-details .schedule-item time{font-size:22px}.mockup-details .schedule-item h3{font-size:13px;margin:3px 0 0;line-height:1.6}.mockup-details .schedule-item p{margin:0;font-size:11px}
+.dress-editorial{order:4;text-align:center;margin-top:34px}.dress-editorial h3{display:flex;align-items:center;gap:20px;justify-content:center;font:13px Georgia,serif;letter-spacing:3px;color:#806442}.dress-editorial h3:before,.dress-editorial h3:after{content:'';height:1px;background:#dcc397;width:25%}.dress-colors{display:flex;justify-content:center;gap:22px}.dress-colors>div{display:grid;justify-items:center;gap:9px}.dress-colors span{width:43px;height:43px;border:1px solid #dbc499;border-radius:50%}.dress-colors small{font-size:13px;color:#77634b}.dress-editorial>p{font-size:13px;margin:18px 0 0;color:#8c7657}
+@media(max-width:1000px) and (min-width:701px){.site-header nav{gap:12px}.site-header nav a{font-size:11px}.wedding-wordmark-copy{padding-left:10px}.wedding-wordmark-copy strong{font-size:18px}.site-header .nav-rsvp{min-width:0;padding:10px 15px}.mockup-hero-copy{padding-left:5vw}.mockup-actions{gap:13px}.mockup-actions .button{min-width:155px}.mockup-date{font-size:14px}}
+@media(max-width:700px){
+ .mockup-hero-photo{width:100%;margin-left:0}main #details{padding:35px 22px;background:linear-gradient(130deg,#fffdf9f5,#fffdf9d9),url('../public/images/gold-stationery.png') center bottom/cover}
+ .mockup-details .detail-grid{grid-template-columns:1fr;padding:20px 14px}.mockup-details .detail-grid:after{background-size:62px 62px;inset:-8px}
+ #details .detail-card:first-child,#details .detail-card:nth-child(2){padding:17px 5px}.venue-title{justify-content:center;gap:7px}.venue-title>svg{width:18px}#details .detail-card:nth-child(2)>p{margin-left:0}.venue-actions{padding:0;gap:10px;justify-content:center}#details .detail-card:nth-child(2) .text-link{min-width:120px;padding:8px 12px;font-size:12px}
+ .mockup-details .schedule{gap:22px;margin:30px 0 0}.mockup-details .schedule:before{left:27px;top:20px;bottom:20px;width:1px;height:auto;right:auto}.mockup-details .schedule-item{display:grid;grid-template-columns:57px 65px 1fr;gap:0 12px;text-align:left;align-items:center}.ceremony-icon{margin:0;grid-row:1/3}.mockup-details .schedule-item time{font-size:21px;grid-row:1/3}.mockup-details .schedule-item h3{font-size:13px;margin:0}.mockup-details .schedule-item p{grid-column:3}
+}
+main #details{background:linear-gradient(120deg,#fffdf9eF 25%,#fffdf9f5 65%,#fffdf9d9),url('../public/images/gold-stationery.png') left bottom/240% auto}
