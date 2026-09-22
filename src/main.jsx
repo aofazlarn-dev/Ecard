@@ -7,4 +7,5 @@ import './ivory.css';
 import './mockup.css';
 import './note.css';
 import './champagne.css';
+import './pearl-finish.css';
 createRoot(document.getElementById('root')).render(<React.StrictMode><App /></React.StrictMode>);

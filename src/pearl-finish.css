@@ -1,0 +1,83 @@
+/* Selected combination: original layout with pearl surfaces and gold buttons. */
+:root {
+  --pearl-surface: linear-gradient(125deg, #fffdf8 0%, #ffffff 28%, #f3ebdd 48%, #fffdf8 68%, #ffffff 100%);
+  --pearl-gold: linear-gradient(115deg, #b58b46, #d8bc85, #b78e4b);
+}
+body { background: var(--pearl-surface); }
+.site-header { background: #fffdf8ee; }
+.mockup-hero, .envelope-opening { background: var(--pearl-surface); }
+.mockup-rule svg { background: #fffdf8; }
+.mockup-hero-photo:after { background: linear-gradient(90deg, #fffdf8, #fffdf8b0 6%, transparent 26%); }
+.countdown-band, .closing { background: #fffdf8; }
+.mockup-details,
+main #story.story,
+main #prewedding,
+main #invitation,
+main #rsvp { background: var(--pearl-surface); }
+#rsvp .form-card { background: #fffefb; }
+main .button,
+.site-header .nav-rsvp,
+#details .detail-card:first-child .text-link,
+#details .detail-card:nth-child(2) .text-link {
+  border-radius: 40px;
+  border: 1px solid #af894b;
+  background: var(--pearl-gold);
+  color: #49371e;
+  box-shadow: inset 0 0 0 3px #fff8e67a, 0 8px 22px #95733826;
+}
+main .button:hover,
+.site-header .nav-rsvp:hover,
+#details .detail-card:first-child .text-link:hover,
+#details .detail-card:nth-child(2) .text-link:hover {
+  background: linear-gradient(115deg, #c29a57, #e3cca0, #c49d5d);
+  color: #49371e;
+  border-color: #977038;
+}
+main .button.secondary { background: #fffdf8; color: #795c29; box-shadow: inset 0 0 0 3px #f5ead6; }
+main .button.secondary:hover { background: #f5ead6; }
+
+/* Keep the original hero; frame only the content sections below it. */
+main #details,
+main #story.story,
+main #prewedding,
+main #invitation,
+main #rsvp {
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 32px;
+  background: var(--pearl-surface) padding-box,
+    linear-gradient(125deg, #aa8240, #f3e2bd 28%, #c49d5d 55%, #f9edd3 78%, #b58b46) border-box;
+  box-shadow: 0 12px 32px #9573380d;
+}
+main #details { width: calc(100% - 64px); max-width: 1180px; margin: 44px auto; padding: 45px 48px 30px; }
+main #story.story:before { border-radius: 26px; border-color: #d9bd87; }
+main #story.story .note-corner { display: none; }
+main #details:after,
+main #story.story:after,
+main #prewedding:after,
+main #invitation:after,
+main #rsvp:after {
+  content: '';
+  display: block;
+  position: absolute;
+  inset: 8px;
+  width: auto;
+  height: auto;
+  border-radius: 25px;
+  background: url('../public/images/gold-floral-corner.svg') left top / 115px 115px no-repeat,
+    url('../public/images/gold-floral-corner.svg') right bottom / 115px 115px no-repeat;
+  opacity: .65;
+  clip-path: none;
+  z-index: 0;
+  pointer-events: none;
+}
+main #rsvp .form-card { border-radius: 24px; }
+@media(max-width:700px) {
+  .mockup-hero-photo:after { background: linear-gradient(#fffdf8, transparent 16%); }
+  main #details { width: calc(100% - 32px); margin: 30px auto; padding: 35px 22px 20px; }
+  main #details, main #story.story, main #prewedding, main #invitation, main #rsvp { border-radius: 24px; }
+  main #details:after, main #story.story:after, main #prewedding:after, main #invitation:after, main #rsvp:after {
+    background-size: 55px 55px;
+    opacity: .5;
+  }
+}
