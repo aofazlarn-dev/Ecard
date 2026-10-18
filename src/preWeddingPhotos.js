@@ -1,5 +1,5 @@
-// Add images to this directory, then rebuild/deploy. No code changes needed.
-const files = import.meta.glob('./assets/prewedding/*.{jpg,jpeg,png,webp,avif,JPG,JPEG,PNG,WEBP,AVIF}', {
+// Add web-sized images to assets/prewedding/web, then rebuild/deploy.
+const files = import.meta.glob('./assets/prewedding/web/*.{jpg,jpeg,png,webp,avif,JPG,JPEG,PNG,WEBP,AVIF}', {
   eager: true,
   query: '?url',
   import: 'default',
