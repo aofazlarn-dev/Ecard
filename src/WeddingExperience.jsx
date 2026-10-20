@@ -54,7 +54,7 @@ export function WeddingHero() {
       <p className="mockup-date">{w.dateEnglish}</p>
       <div className="mockup-actions"><a href="#rsvp" className="button">ตอบรับคำเชิญ <ArrowUpRight size={17}/></a><a href="#details" className="text-link">รายละเอียดงาน</a></div>
     </div>
-    <div className="mockup-hero-photo"><img src={asset('gold-stationery.png')} alt="การ์ดบ่าวสาวบนผ้าไหมสีครีม ประดับดอกกุหลาบขาว ถาดทองและแหวนแต่งงาน" width="1536" height="1024" fetchPriority="high"/></div>
+    <div className="mockup-hero-photo hero-stationery-refined"><img src={asset('hero-whitegold-card-v2.png')} alt="การ์ดภาพคู่บ่าวสาวริมทะเลแบบขาวทอง วางบนถาดทองและผ้าไหมสีครีม" width="1536" height="1024" fetchPriority="high"/></div>
     <span className="hero-sentiment" aria-hidden="true">Better<br/>Together ♡</span>
   </section>;
 }

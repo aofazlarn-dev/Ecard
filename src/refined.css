@@ -90,3 +90,9 @@ main #details{max-width:none;width:100%;padding:32px max(30px,calc((100vw - 1060
  .mockup-details .schedule{gap:22px;margin:30px 0 0}.mockup-details .schedule:before{left:27px;top:20px;bottom:20px;width:1px;height:auto;right:auto}.mockup-details .schedule-item{display:grid;grid-template-columns:57px 65px 1fr;gap:0 12px;text-align:left;align-items:center}.ceremony-icon{margin:0;grid-row:1/3}.mockup-details .schedule-item time{font-size:21px;grid-row:1/3}.mockup-details .schedule-item h3{font-size:13px;margin:0}.mockup-details .schedule-item p{grid-column:3}
 }
 main #details{background:linear-gradient(120deg,#fffdf9eF 25%,#fffdf9f5 65%,#fffdf9d9),url('../public/images/gold-stationery.png') left bottom/240% auto}
+
+/* Softly frame the original silk and stationery composition. */
+.mockup-hero-photo.hero-stationery-refined img{object-position:58% center;filter:brightness(1.025) saturate(.9)}
+.mockup-hero-photo.hero-stationery-refined:after{background:linear-gradient(90deg,#fffdf9 0%,#fffdf9a6 8%,transparent 29%),linear-gradient(0deg,#fffdf94d,transparent 22%)}
+.mockup-hero-photo.hero-stationery-refined:before{content:'';position:absolute;inset:28px 25px 28px 17%;border:1px solid #b49a6840;border-radius:2px;z-index:1;pointer-events:none;box-shadow:inset 0 0 0 5px #fffdf91a}
+@media(max-width:700px){.mockup-hero-photo.hero-stationery-refined img{object-position:center}.mockup-hero-photo.hero-stationery-refined:before{inset:16px;border-color:#b49a6838}.mockup-hero-photo.hero-stationery-refined:after{background:linear-gradient(#fffdf9,transparent 20%),linear-gradient(0deg,#fffdf96b,transparent 20%)}}
