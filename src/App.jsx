@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import weddingLogo from '../Logo.png';
-import { ArrowDown, ArrowUpRight, CalendarDays, Check, Heart, MapPin, Menu, X, Copy, QrCode, Leaf, Gem, HandHeart, Droplets } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, CalendarDays, Check, Heart, MapPin, Menu, X, Copy, QrCode, Leaf, Gem, HandHeart, Droplets, Utensils } from 'lucide-react';
 import { QRCodeSVG } from 'qrcode.react';
 import { wedding as w } from './config';
 import { demo, configured, submitRsvp, editToken, answerKey } from './api';
@@ -50,7 +50,7 @@ export default function App() {
           <article className="detail-card"><h3 className="mockup-day"><strong>{w.dateLabel.split(' ')[0]}</strong><span>{w.dateLabel.split(' ').slice(1).join(' ')}</span></h3><p>{w.timeLabel}</p></article>
           <article className="detail-card"><div className="venue-title"><MapPin size={24}/><h3>{w.venue}</h3></div><p>{w.address}</p><div className="venue-actions"><CalendarLink/>{w.mapUrl && <a className="text-link" href={w.mapUrl} target="_blank" rel="noreferrer"><MapPin size={20}/>ดูแผนที่</a>}</div></article>
         </div>
-        <div className="schedule">{w.schedule.map((item,i)=>{const Icon = [WaiIcon, OfferingTrayIcon, Gem, HandHeart, Droplets][i] || Heart; return <div className="schedule-item" key={item.time}><span className="ceremony-icon" aria-hidden="true"><Icon size={25} strokeWidth={1.2}/></span><time>{item.time}</time><h3>{item.title}</h3><p>{item.detail}</p></div>;})}</div>
+        <div className="schedule">{w.schedule.map((item,i)=>{const Icon = [WaiIcon, OfferingTrayIcon, Gem, HandHeart, Droplets, Utensils][i] || Heart; return <div className="schedule-item" key={item.time}><span className="ceremony-icon" aria-hidden="true"><Icon size={25} strokeWidth={1.2}/></span><time>{item.time}</time><h3>{item.title}</h3><p>{item.detail}</p></div>;})}</div>
         <div className="dress-editorial"><h3>DRESS CODE</h3><div className="dress-colors" aria-label={w.dressCodeLabel}>{w.dressCode.map((c,i)=><div key={c}><span style={{background:c}}/><small>{w.dressCodeLabel.split(' · ')[i]}</small></div>)}</div><p>อบอุ่น เรียบง่าย ไปด้วยกัน</p></div>
       </section>
       <section id="story" className="story section reveal">

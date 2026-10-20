@@ -26,7 +26,7 @@ main #details:after{display:none}.mockup-details .section-heading{text-align:cen
 #details .detail-card:nth-child(2){border-left:1px solid #e0ccaa;text-align:left}#details .detail-card:nth-child(2) h3{font-size:19px;line-height:1.8}
 #details .detail-card:first-child .text-link,#details .detail-card:nth-child(2) .text-link{background:transparent;color:#695032;box-shadow:none;border:1px solid #cdb58b;border-radius:16px;font-size:13px;min-height:44px;padding:9px 18px}
 #details .detail-card:nth-child(3){grid-column:1/-1;border:0;border-top:1px solid #eee3d1;margin-top:25px;padding:24px 0 0;background:none;box-shadow:none}
-.mockup-details .schedule{margin-top:42px;padding-top:23px;border-color:#d9c29c;gap:16px;grid-template-columns:repeat(5,minmax(0,1fr))}
+.mockup-details .schedule{margin-top:42px;padding-top:23px;border-color:#d9c29c;gap:16px;grid-template-columns:repeat(6,minmax(0,1fr))}
 .mockup-details .schedule-item{display:block;padding:0;text-align:center}.mockup-details .schedule-item:before{left:calc(50% - 4px);top:-28px;border-radius:0;transform:rotate(45deg);background:#fffdf9;box-shadow:0 0 0 5px #fffdf9}.schedule-number{display:none}.mockup-details .schedule-item time{font-size:25px;color:#765832}.mockup-details .schedule-item h3{font-size:14px;line-height:1.8;margin-top:9px}.mockup-details .schedule-item p{font-size:12px}
 main #story.story,main #prewedding,main #invitation,main #rsvp{background:#fffdf9;border-color:#e1ceaa;box-shadow:none;margin-top:65px;margin-bottom:65px}
 main #prewedding{border:0}main #prewedding:after{display:none}

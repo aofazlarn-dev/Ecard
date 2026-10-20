@@ -69,8 +69,8 @@ export function Countdown() {
 }
 
 const cards=[
-  {src:'card-front.webp',title:'คำเชิญจากครอบครัว',description:'ชื่อเจ้าภาพและกำหนดพิธีมงคลสมรส',label:'ด้านหน้า',index:'01'},
-  {src:'card-back.webp',title:'วันของเรา สถานที่ของความทรงจำ',description:'ภาพคู่บ่าวสาวและแผนที่เดินทาง',label:'ด้านหลัง',index:'02'},
+  {src:'card-front-luxury.png',title:'คำเชิญวันสำคัญของเรา',description:'ภาพคู่บ่าวสาว วันและสถานที่จัดงาน',label:'ด้านหน้า',index:'01'},
+  {src:'card-back-whitegold-v4.png',title:'คำเชิญจากครอบครัว',description:'ชื่อเจ้าภาพ กำหนดการ และคิวอาร์โค้ดแผนที่',label:'ด้านหลัง',index:'02'},
 ];
 export function InvitationGallery() {
   const [selected,setSelected]=useState(null),[zoom,setZoom]=useState(false);
