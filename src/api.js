@@ -76,3 +76,7 @@ export async function assignTable(ids, tableId) {
   const { error } = await supabase.from('rsvps').update({ table_id: tableId }).in('id', ids); if (error) throw error;
 }
 
+export async function placeTable(id, slot) {
+  if (demo) { localStorage.setItem(TABLE_STORE, JSON.stringify((await listTables()).map(t => t.id === id ? { ...t, layout_slot: slot } : t))); return; }
+  const { error } = await supabase.from('wedding_tables').update({ layout_slot: slot }).eq('id', id); if (error) throw error;
+}

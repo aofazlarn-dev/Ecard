@@ -32,7 +32,7 @@ export default function App() {
   const [editing,setEditing] = useState(false);
   const progress = useWeddingMotion(hash);
   useEffect(() => { const listener = () => { setHash(location.hash); setMenu(false); }; window.addEventListener('hashchange', listener); return () => window.removeEventListener('hashchange',listener); }, []);
-  if (hash.startsWith('#/admin')) return <Admin tablesPage={hash.startsWith('#/admin/tables')}/>;
+  if (hash.startsWith('#/admin')) return <Admin tablesPage={hash.startsWith('#/admin/tables')} layoutPage={hash.startsWith('#/admin/layout')}/>;
   const url = location.origin + location.pathname;
   const unconfigured = !demo && !configured;
   return <>
@@ -75,4 +75,5 @@ export default function App() {
     {share && <div className="modal-backdrop" onClick={() => setShare(false)}><section className="share-modal" role="dialog" aria-modal="true" aria-label="แชร์คำเชิญ" onClick={e => e.stopPropagation()}><button className="close-modal" autoFocus aria-label="ปิด" onClick={() => setShare(false)}><X/></button><div className="eyebrow">YOU'RE INVITED</div><h2>{w.brideDisplay} & {w.groomDisplay}</h2><QRCodeSVG value={url} size={200} marginSize={4} fgColor="#806332"/><p>สแกนเพื่อเปิดการ์ดและตอบรับคำเชิญ</p><button className="button" onClick={async () => { try { await navigator.clipboard.writeText(url); setCopied(true); } catch { setCopied(false); } }}>{copied ? <Check size={16}/> : <Copy size={16}/>} {copied ? 'คัดลอกแล้ว' : 'คัดลอกลิงก์'}</button><input aria-label="ลิงก์คำเชิญ" readOnly value={url} onFocus={e=>e.target.select()}/></section></div>}
   </>;
 }
+
 
