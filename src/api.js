@@ -20,7 +20,7 @@ export async function submitRsvp(input, token, captcha) {
   const payload = normalizeRsvp(input);
   if (demo) {
     const rows = readDemo(); const previous = rows.find(r => r.demo_token === token);
-    const record = { ...payload, id: previous?.id || crypto.randomUUID(), demo_token: token, submitted_at: previous?.submitted_at || new Date().toISOString(), updated_at: new Date().toISOString() };
+    const record = { ...previous, ...payload, id: previous?.id || crypto.randomUUID(), demo_token: token, submitted_at: previous?.submitted_at || new Date().toISOString(), updated_at: new Date().toISOString() };
     writeDemo([...rows.filter(r => r.id !== record.id), record]); return record;
   }
   if (!supabase) throw new Error('ระบบยังไม่เปิดรับ RSVP กรุณาติดต่อบ่าวสาว');
@@ -51,3 +51,28 @@ export async function adminDelete(id) {
   if (demo) return writeDemo(readDemo().filter(r => r.id !== id));
   const { error } = await supabase.from('rsvps').delete().eq('id', id); if (error) throw error;
 }
+
+const TABLE_STORE = 'wedding-demo-tables-v1';
+export async function listTables() {
+  if (demo) { try { return JSON.parse(localStorage.getItem(TABLE_STORE) || '[]'); } catch { return []; } }
+  const { data, error } = await supabase.from('wedding_tables').select('*').order('created_at').order('id');
+  if (error) throw error;
+  return data;
+}
+export async function createTable(name) {
+  if (demo) { const tables = await listTables(); localStorage.setItem(TABLE_STORE, JSON.stringify([...tables, { id: crypto.randomUUID(), name }])); return; }
+  const { error } = await supabase.from('wedding_tables').insert({ name }); if (error) throw error;
+}
+export async function renameTable(id, name) {
+  if (demo) { localStorage.setItem(TABLE_STORE, JSON.stringify((await listTables()).map(t => t.id === id ? { ...t, name } : t))); return; }
+  const { error } = await supabase.from('wedding_tables').update({ name }).eq('id', id); if (error) throw error;
+}
+export async function deleteTable(id) {
+  if (demo) { localStorage.setItem(TABLE_STORE, JSON.stringify((await listTables()).filter(t => t.id !== id))); writeDemo(readDemo().map(r => r.table_id === id ? { ...r, table_id: null } : r)); return; }
+  const { error } = await supabase.from('wedding_tables').delete().eq('id', id); if (error) throw error;
+}
+export async function assignTable(ids, tableId) {
+  if (demo) { writeDemo(readDemo().map(r => ids.includes(r.id) ? { ...r, table_id: tableId } : r)); return; }
+  const { error } = await supabase.from('rsvps').update({ table_id: tableId }).in('id', ids); if (error) throw error;
+}
+
